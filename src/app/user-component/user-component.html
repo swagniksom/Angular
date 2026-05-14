@@ -1,5 +1,8 @@
 <div>
-  <button>
-<span>NAME</span>
+  <button ( (click)="onSelectUser()" )>
+    <img [src]="imagePath"/>
+<!--    ---Property binding-->
+<span>NAME {{selectUser.name}}</span>
+<!-----data binding-->
   </button>
 </div>
