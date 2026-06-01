@@ -1,5 +1,6 @@
 import {Component, computed, EventEmitter, input, Input, Output, signal} from '@angular/core';
 import {DUMMY_USERS} from '../../assets/DUMMY-USER';
+import {User} from './user.model';
 // import {DUMMY_USERS}
 const randomIndex=Math.floor(Math.random()*DUMMY_USERS.length);
 // we can use the object also
@@ -9,11 +10,11 @@ const randomIndex=Math.floor(Math.random()*DUMMY_USERS.length);
 //   avatar:string
 // }
 // and also we can use the interface
-interface User{
-  id:string,
-   name:string,
-   avatar:string
-}
+// interface User{
+//   id:string,
+//    name:string,
+//    avatar:string
+// }
 @Component({
   selector: 'app-user-component',
   imports: [],
@@ -41,6 +42,7 @@ export class UserComponent {
   // }
   // also we can write  like
  @Input({required:true})user!:User
+  @Input({required:true})selcted!:boolean;
   @Output()select=new EventEmitter();
   //  --------------------
   // For AngularSignals

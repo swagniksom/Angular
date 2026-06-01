@@ -4,7 +4,7 @@
 <ul id="users">
   @for(user of users;track user.id){
   <li>
-    <app-user-component [user]="user" (select)="onselectUsers($event)"/>
+    <app-user-component [user]="user"  [selcted]="user.id===selectUsersId" (select)="onselectUsers($event)"/>
   </li>
   }
 
@@ -13,7 +13,7 @@
 <!--  </li>-->
 </ul>
   @if(selectteduser){
-  <app-tasks [name]="selectteduser.name" />
+  <app-tasks [userId]="selectteduser.id" [name]="selectteduser.name" />
   }@else{
   <p class="fallback">Selected user for task</p>
   }
